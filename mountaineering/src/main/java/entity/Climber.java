@@ -13,6 +13,7 @@ import java.util.UUID;
 @Table(name = "tb_climbers")
 @Getter
 @Setter
+@NamedQuery(name = "climber.get.by.name.mail", query = "SELECT c FROM Climber c WHERE c.email = :climber_mail")
 public class Climber {
     @EmbeddedId
     private ClimberKey key;
@@ -22,8 +23,8 @@ public class Climber {
     @Column(nullable = false, unique = true)
     private UUID uuid;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "group")
-    private ClimbingGroup group;
+    @JoinColumn(name = "climbingGroup")
+    private ClimbingGroup climbingGroup;
 
     public void setUuid() {
         this.uuid = UUID.randomUUID();
@@ -33,7 +34,6 @@ public class Climber {
     @EqualsAndHashCode
     @Getter
     @Setter
-    @NamedQuery(name = "climber.get.by.name.mail", query = "SELECT c FROM Climber c WHERE c.email = :climber_mail")
     public static class ClimberKey implements Serializable {
         @Column(length = 30)
         private String name;

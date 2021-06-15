@@ -14,16 +14,15 @@ import java.util.Objects;
 @Table(name = "tb_climbing_groups")
 @Getter
 @Setter
-@NamedQuery(name = "group.get.future.date", query = "SELECT g FROM ClimbingGroup c WHERE c.start > :start_date")
+@NamedQuery(name = "group.get.future.date", query = "SELECT g FROM ClimbingGroup g WHERE g.start > :start_date")
 public class ClimbingGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="mountain")
+    @JoinColumn(nullable = false)
     private Mountain mountain;
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "climbingGroup")
     private List<Climber> climbers = new ArrayList<>();
     private LocalDateTime start;
 }

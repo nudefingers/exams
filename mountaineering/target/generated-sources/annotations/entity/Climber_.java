@@ -14,13 +14,13 @@ public abstract class Climber_ {
 	public static volatile SingularAttribute<Climber, ClimberKey> key;
 	public static volatile SingularAttribute<Climber, Integer> age;
 	public static volatile SingularAttribute<Climber, String> email;
-	public static volatile SingularAttribute<Climber, ClimbingGroup> group;
+	public static volatile SingularAttribute<Climber, ClimbingGroup> climbingGroup;
 
 	public static final String UUID = "uuid";
 	public static final String KEY = "key";
 	public static final String AGE = "age";
 	public static final String EMAIL = "email";
-	public static final String GROUP = "group";
+	public static final String CLIMBING_GROUP = "climbingGroup";
 
 }
 

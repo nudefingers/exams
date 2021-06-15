@@ -1,6 +1,7 @@
 package entity;
 
 import javax.annotation.processing.Generated;
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -9,10 +10,12 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Mountain_ {
 
 	public static volatile SingularAttribute<Mountain, String> name;
+	public static volatile ListAttribute<Mountain, ClimbingGroup> groups;
 	public static volatile SingularAttribute<Mountain, Integer> id;
 	public static volatile SingularAttribute<Mountain, Integer> height;
 
 	public static final String NAME = "name";
+	public static final String GROUPS = "groups";
 	public static final String ID = "id";
 	public static final String HEIGHT = "height";
 

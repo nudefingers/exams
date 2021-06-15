@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -25,5 +27,5 @@ public class Mountain {
     @Column(nullable = false)
     private int height;
     @OneToMany(mappedBy = "mountain")
-    private ClimbingGroup group;
+    private List<ClimbingGroup> groups = new ArrayList<>();
 }

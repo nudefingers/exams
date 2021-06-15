@@ -37,8 +37,8 @@ public class Application {
         Climber climber2 = new Climber();
 
         Climber.ClimberKey key2 = new Climber.ClimberKey();
-        key1.setName("Ян");
-        key1.setSurname("Ян");
+        key2.setName("Ян");
+        key2.setSurname("Ян");
         climber2.setKey(key2);
 
         climber2.setAge(18);
